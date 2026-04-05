@@ -323,9 +323,6 @@ video { border-radius:12px; border:1px solid #1e3a5f; }
 </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
-# LOAD ALL MODELS (cached)
-# ============================================================
 @st.cache_resource(show_spinner=False)
 def load_all_models():
     """Load all .pt models once and cache them."""
