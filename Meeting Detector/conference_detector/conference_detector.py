@@ -13,18 +13,16 @@ MODEL_CONFIG = {
     "mic":    "mic.pt",
 }
 
-# ── Annotation colors (BGR) ──────────────────────────────────
 CLASS_COLORS = {
-    "chair":  (0,   255, 100),   # Green
-    "people": (0,   200, 255),   # Cyan
-    "light":  (180, 100, 255),   # Purple
-    "mic":    (255,  80, 180),   # Pink
+    "chair":  (0,   255, 100),   
+    "people": (0,   200, 255),   
+    "light":  (180, 100, 255),  
+    "mic":    (255,  80, 180),  
 }
 
 COLOR_STYLES = ["mc-green","mc-cyan","mc-purple","mc-pink","mc-amber","mc-blue","mc-rose"]
 ICONS        = {"chair":"🪑","people":"🧑","light":"💡","mic":"🎙️"}
 
-# ── Page config ─────────────────────────────────────────────
 st.set_page_config(
     page_title="Election Assets Audit",
     page_icon="🎥",
@@ -32,7 +30,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# ── CSS ─────────────────────────────────────────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap');
@@ -349,7 +346,7 @@ def load_all_models():
 
     return loaded, failed
 
-# ── Header ───────────────────────────────────────────────────
+
 st.markdown("""
 <div class="app-header">
   <div style="font-size:42px">🎥</div>
@@ -360,11 +357,10 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ── Load models + show status ────────────────────────────────
 with st.spinner("Loading models..."):
     models, failed_models = load_all_models()
 
-# LIST OF ASSETS strip
+
 strip_html = '<div class="assets-section"><div class="assets-heading">📋 List of Assets</div><div class="model-strip">'
 all_model_icons = {"chair":"🪑","people":"🧑","light":"💡","mic":"🎙️"}
 for cls_name, pt_file in MODEL_CONFIG.items():
@@ -400,9 +396,7 @@ if not models:
     st.error("❌ No models loaded. Place .pt files in the same folder and restart.")
     st.stop()
 
-# ============================================================
-# VIDEO UPLOAD — bright section
-# ============================================================
+
 st.markdown("""
 <div class="upload-section">
   <div class="upload-heading">
@@ -455,9 +449,9 @@ else:
     st.info("🎬 Upload a video to detect chairs, people, lights, and mics.")
 
 # ── Run button (all settings hidden, super fast defaults) ────
-conf_threshold = 0.35   # fixed
+conf_threshold = 0.35 
 frame_skip     = 2      # Normal — every 2nd frame
-resize_on      = True   # always resize to 640px
+resize_on      = True   
 
 run_btn = st.button(
     "🚀  RUN DETECTION",
