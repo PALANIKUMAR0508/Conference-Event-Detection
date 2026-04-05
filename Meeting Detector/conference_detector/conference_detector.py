@@ -1,22 +1,3 @@
-# ============================================================
-# CONFERENCE ROOM DETECTOR
-# ============================================================
-# FOLDER STRUCTURE — இப்படி போடணும்:
-#
-#   conference_detector/
-#   ├── conference_detector.py   ← இந்த file
-#   ├── chair.pt                 ← chair model
-#   ├── people.pt                ← people model
-#   ├── light.pt                 ← light model
-#   └── mic.pt                   ← mic model
-#
-# INSTALL:
-#   pip install streamlit ultralytics opencv-python-headless numpy pandas Pillow
-#
-# RUN:
-#   streamlit run conference_detector.py
-# ============================================================
-
 from __future__ import annotations
 import os, cv2, uuid, tempfile, time
 import numpy as np
