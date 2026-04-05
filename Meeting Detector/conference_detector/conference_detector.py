@@ -6,11 +6,6 @@ import streamlit as st
 from collections import defaultdict
 from ultralytics import YOLO
 
-# ============================================================
-# ✅ MODEL CONFIG — உங்க .pt files இங்க add பண்ணு
-#    Key   = class name (annotation-ல காட்டும்)
-#    Value = .pt file path (same folder-ல இருந்தா file name போதும்)
-# ============================================================
 MODEL_CONFIG = {
     "chair":  "chair.pt",
     "people": "people.pt",
